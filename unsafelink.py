@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import sys
 from urllib.parse import urlparse, unquote, parse_qs
 
@@ -6,7 +7,10 @@ from urllib.parse import urlparse, unquote, parse_qs
 # which decodes to:
 # https://github.com/orgs/bayer-int/teams/all
 
-safeurl = sys.argv[1]
+if len(sys.argv) > 1:
+    safeurl = sys.argv[1]
+else:
+    safeurl = input("Enter Outlook 'safe' link: ")
 query = urlparse(safeurl).query
 query_strings = parse_qs(query)
 unsafeurl = query_strings["url"][0]
