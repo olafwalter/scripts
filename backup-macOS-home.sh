@@ -2,12 +2,11 @@
 # backup-macOS-home.sh
 
 ISODATE=$(date -u +"%Y%m%dT%H%M%SZ") 
-DESTINATION="$HOME/OneDrive/OneDrive - Bayer/Backup/$ISODATE"
+DESTINATION="$HOME/OneDrive - Bayer/Backup/$ISODATE"
 
 FILES=(
     'Library/Application Support/Google/Chrome/Default/Bookmarks.bak'
     '.zshrc'
-    '.zsh_history'
 )
 
 FOLDERS=(
@@ -23,8 +22,9 @@ then
     exit -1
 fi
 
-echo "Backing up to $DESTINATION..."
-exec &> ${DESTINATION}/${0}.log
+LOGFILE=${DESTINATION}/${0}-${ISODATE}.log
+echo "Logging to $LOGFILE..."
+exec &> ${LOGFILE}
 
 cd $HOME
 
