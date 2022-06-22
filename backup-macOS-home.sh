@@ -4,6 +4,8 @@
 ISODATE=$(date -u +"%Y%m%dT%H%M%SZ") 
 DESTINATION="$HOME/OneDrive - Bayer/Backup/$ISODATE"
 
+# make sure not include secret files
+
 FILES=(
     'Library/Application Support/Google/Chrome/Default/Bookmarks.bak'
     '.zshrc'

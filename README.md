@@ -1,3 +1,5 @@
+_Data classification: public. This is a public Github repository_
+
 # snippets
 Snippets and scripts for daily work
 
